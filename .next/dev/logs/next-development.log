@@ -63,3 +63,13 @@
 {"timestamp":"03:10:30.048","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
 {"timestamp":"03:10:30.133","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
 {"timestamp":"03:10:30.134","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:12:34.151","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:12:34.151","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:12:41.855","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:12:41.856","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:13:10.460","source":"Server","level":"LOG","message":"✓ Compiled in 70ms"}
+{"timestamp":"03:13:31.981","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:13:42.126","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:13:44.822","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:15:04.901","source":"Server","level":"LOG","message":"✓ Compiled in 111ms"}
+{"timestamp":"03:16:24.204","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

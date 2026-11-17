@@ -20,7 +20,11 @@ export default async function Icon() {
                 backgroundColor: '#000000',
             }}
         >
-            <img src={logoSource} width="460" height="189" alt="CLARO" />
+            <img
+                src={logoSource}
+                alt="CLARO"
+                style={{ width: 460, height: 189 }}
+            />
         </div>,
         size
     );
