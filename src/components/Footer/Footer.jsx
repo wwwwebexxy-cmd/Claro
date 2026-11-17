@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { branchLocations } from '../../branchLocations';
 import './Footer.css';
 
 const Footer = () => {
     const [servicesExpanded, setServicesExpanded] = useState(false);
+    const [branchesExpanded, setBranchesExpanded] = useState(false);
 
     return (
         <footer className="footer">
@@ -14,7 +16,7 @@ const Footer = () => {
                 <div className="footer-top">
                     <div className="footer-brand">
                         <Link href="/" className="logo">
-                            <img src="/assets/claro-logo.png" alt="CLARO" className="footer-logo-img" />
+                            <img src="/assets/claro-logo.webp" alt="CLARO" className="footer-logo-img" />
                         </Link>
                         <p className="footer-brand-tagline">PAINTING · TECHNICAL · CLEANING</p>
                         <p>CLARO provides painting works, technical services and cleaning services for residential and commercial properties in Umm Al Quwain, UAE.</p>
@@ -64,10 +66,38 @@ const Footer = () => {
 
                         <div className="footer-col">
                             <h4>Contact</h4>
-                            <ul>
+                            <ul className="footer-contact-list">
                                 <li><a href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
                                 <li><a href="mailto:ajmalclaro@gmail.com"><FaEnvelope size={14} /> ajmalclaro@gmail.com</a></li>
                                 <li><a className="footer-location-link" href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt className="footer-location-icon" size={14} /><span>A8 Warehouse, Al Maqta 2, Umm Al Quwain</span></a></li>
+                                {branchLocations.flatMap((location) => location.phones.map((phone) => (
+                                    <li key={`${location.id}-${phone.href}`}>
+                                        <a href={phone.href}><FaPhoneAlt size={14} /> {phone.label} ({location.title})</a>
+                                    </li>
+                                )))}
+                            </ul>
+                            <button
+                                type="button"
+                                className="footer-branches-toggle"
+                                aria-expanded={branchesExpanded}
+                                aria-controls="footer-branches-list"
+                                onClick={() => setBranchesExpanded((expanded) => !expanded)}
+                            >
+                                {branchesExpanded ? 'Hide branch addresses' : 'View branch addresses'} {branchesExpanded ? <FaChevronUp size={11} /> : <FaChevronDown size={11} />}
+                            </button>
+                            <ul
+                                className={`footer-branches-list${branchesExpanded ? ' footer-branches-list--open' : ''}`}
+                                id="footer-branches-list"
+                                aria-hidden={!branchesExpanded}
+                            >
+                                {branchLocations.map((location) => (
+                                    <li key={location.id}>
+                                        <a className="footer-location-link" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
+                                            <FaMapMarkerAlt className="footer-location-icon" size={14} />
+                                            <span>{location.title}: {location.address}</span>
+                                        </a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>

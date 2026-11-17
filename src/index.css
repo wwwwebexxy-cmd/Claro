@@ -194,6 +194,13 @@ ul {
   }
 }
 
+.logo-img,
+.footer-logo-img,
+.marquee-logo,
+.loader-logo {
+  background-color: #000;
+}
+
 /* 320px Responsiveness for all screens */
 @media (max-width: 360px) {
   html {

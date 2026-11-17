@@ -19,8 +19,8 @@ const metadata = {
     title: 'CLARO | Umm Al Quwain, UAE',
     description: 'Painting works, technical services and cleaning services for residential and commercial properties in Umm Al Quwain, UAE.',
     icons: {
-        icon: '/assets/claro-logo.png',
-        apple: '/assets/claro-logo.png'
+        icon: '/favicon.webp',
+        apple: '/assets/claro-logo.webp'
     },
     manifest: '/manifest.json'
 };

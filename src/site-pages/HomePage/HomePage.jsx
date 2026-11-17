@@ -4,11 +4,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
     FaAward, FaShieldAlt,
     FaBolt, FaStar, FaMapMarkerAlt, FaPhoneAlt,
-    FaEnvelope,
+    FaEnvelope, FaArrowRight,
 } from 'react-icons/fa';
+import Link from 'next/link';
 import HeroSlider from '../../components/HeroSlider/HeroSlider';
 import MarqueeBar from '../../components/MarqueeBar/Marqueebar';
+import { galleryPreviewItems } from '../GalleryPage/galleryData';
+import { branchLocations, branchLocationSchemas } from '../../branchLocations';
 import useSeo from '../../hooks/useSeo';
+import { claroMetaDescription, claroSocialImage } from '../../siteMetadata';
 import './HomePage.css';
 
 const locationUrl = 'https://www.google.com/maps?q=25.5039005,55.5543137';
@@ -63,16 +67,16 @@ const CountUp = ({ target, suffix }) => {
 
 /* tag field removed — badges no longer rendered */
 const services = [
-    { img: '/assets/claro-painting-work.png', title: 'Painting & Texture Work', desc: 'Interior and exterior painting with decorative texture finishes.' },
-    { img: '/assets/claro-gold-plating.jpg', title: 'Gold Plating', desc: 'Gold plating for decorative pieces and selected surfaces.' },
-    { img: '/assets/claro-service-gallery.jpg', title: 'Chrome Finishing', desc: 'Chrome finishing for plastic, fiber, steel, metal, wood, stainless steel, mild steel and ceramic.' },
-    { img: '/assets/claro-dipping-work.jpeg', title: 'Dipping & Spray Painting', desc: 'Surface finishing options for a range of shapes, parts and materials.' },
-    { img: '/assets/claro-bathtub-refinishing.png', title: 'Bathtub Refinishing', desc: 'Refinishing work for worn or stained bathtubs.' },
-    { img: '/assets/claro-epoxy-floor-coating.png', title: 'Epoxy Floor Coating', desc: 'Epoxy coating for floors in residential and commercial spaces.' },
-    { img: '/assets/claro-building-cleaning.png', title: 'Building Cleaning', desc: 'Cleaning services for residential and commercial properties.' },
-    { img: '/assets/claro-water-tank-cleaning.png', title: 'Tank & Pipeline Cleaning', desc: 'Water tank cleaning and pipeline disinfection.' },
-    { img: '/assets/claro-electrical-maintenance.png', title: 'Electrical & Plumbing', desc: 'Electrical and plumbing maintenance services.' },
-    { img: '/assets/claro-carpentry-services.png', title: 'Carpentry & Refurbishment', desc: 'Carpentry, flooring installation, ceiling works and property refurbishment.' },
+    { img: '/assets/claro-painting-work.webp', title: 'Painting & Texture Work', desc: 'Interior and exterior painting with decorative texture finishes.' },
+    { img: '/assets/claro-gold-plating.webp', title: 'Gold Plating', desc: 'Gold plating for decorative pieces and selected surfaces.' },
+    { img: '/assets/claro-service-gallery.webp', title: 'Chrome Finishing', desc: 'Chrome finishing for plastic, fiber, steel, metal, wood, stainless steel, mild steel and ceramic.' },
+    { img: '/assets/claro-dipping-work.webp', title: 'Dipping & Spray Painting', desc: 'Surface finishing options for a range of shapes, parts and materials.' },
+    { img: '/assets/claro-bathtub-refinishing.webp', title: 'Bathtub Refinishing', desc: 'Refinishing work for worn or stained bathtubs.' },
+    { img: '/assets/claro-epoxy-floor-coating.webp', title: 'Epoxy Floor Coating', desc: 'Epoxy coating for floors in residential and commercial spaces.' },
+    { img: '/assets/claro-building-cleaning.webp', title: 'Building Cleaning', desc: 'Cleaning services for residential and commercial properties.' },
+    { img: '/assets/claro-water-tank-cleaning.webp', title: 'Tank & Pipeline Cleaning', desc: 'Water tank cleaning and pipeline disinfection.' },
+    { img: '/assets/claro-electrical-maintenance.webp', title: 'Electrical & Plumbing', desc: 'Electrical and plumbing maintenance services.' },
+    { img: '/assets/claro-carpentry-services.webp', title: 'Carpentry & Refurbishment', desc: 'Carpentry, flooring installation, ceiling works and property refurbishment.' },
 ];
 
 const stats = [
@@ -118,14 +122,15 @@ const HomePage = () => {
             "@type": "GeoCoordinates",
             "latitude": 25.5039005,
             "longitude": 55.5543137
-        }
+        },
+        "subOrganization": branchLocationSchemas
     };
 
     useSeo({
         title: "CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain",
-        description: "CLARO provides painting works, cleaning services and technical maintenance for residential and commercial properties in Umm Al Quwain, UAE.",
+        description: claroMetaDescription,
         ogType: "website",
-        ogImage: "/assets/claro-logo.png",
+        ogImage: claroSocialImage,
         schemas: [localBusinessSchema]
     });
 
@@ -183,7 +188,7 @@ const HomePage = () => {
                 <div className="container hp-about-grid">
                     <div className="hp-about-visual reveal">
                         <div className="hp-about-img-frame">
-                            <img src="/assets/claro-storefront.jpg" alt="Claro storefront in Umm Al Quwain" />
+                            <img src="/assets/claro-storefront.webp" alt="Claro storefront in Umm Al Quwain" />
                         </div>
                     </div>
                     <div className="hp-about-text reveal">
@@ -214,6 +219,47 @@ const HomePage = () => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="hp-gallery section" id="gallery">
+                <div className="container">
+                    <div className="hp-section-eyebrow reveal">
+                        <span className="hp-eyebrow-line" />
+                        <span className="hp-eyebrow-text">Selected Projects</span>
+                        <span className="hp-eyebrow-line" />
+                    </div>
+                    <h2 className="hp-section-heading reveal">Our <em>Gallery</em></h2>
+                    <p className="hp-gallery-intro reveal">
+                        A look at CLARO texture work, decorative finishes and automotive projects.
+                    </p>
+
+                    <div className="hp-gallery-grid">
+                        {galleryPreviewItems.map((item, i) => (
+                            <Link
+                                href="/gallery"
+                                className="hp-gallery-card reveal"
+                                key={item.id}
+                                style={{ '--delay': `${i * 0.08}s` }}
+                                aria-label={`View gallery: ${item.title}`}
+                            >
+                                <div className="hp-gallery-image-wrap">
+                                    <img src={item.src} alt={item.alt} loading="lazy" />
+                                    <span>{item.categoryLabel}</span>
+                                </div>
+                                <div className="hp-gallery-card-copy">
+                                    <h3>{item.title}</h3>
+                                    <FaArrowRight aria-hidden="true" />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="hp-gallery-action reveal">
+                        <Link href="/gallery" className="hp-gallery-more">
+                            View More <FaArrowRight aria-hidden="true" />
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -264,6 +310,38 @@ const HomePage = () => {
                                 referrerPolicy="no-referrer-when-downgrade"
                                 title="CLARO location in Umm Al Quwain"
                             />
+                        </div>
+                    </div>
+                    <div className="hp-local-branches reveal">
+                        <h3>Kerala Branches</h3>
+                        <div className="hp-branch-grid">
+                            {branchLocations.map((location) => (
+                                <article className="hp-branch-card" key={location.id}>
+                                    <div className="hp-branch-details">
+                                        <div>
+                                            <h4>{location.title}</h4>
+                                            <p>{location.address}</p>
+                                            <div className="hp-branch-phones">
+                                                {location.phones.map((phone) => (
+                                                    <a href={phone.href} key={phone.href}>{phone.label}</a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <a className="hp-branch-directions" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
+                                            Open map
+                                        </a>
+                                    </div>
+                                    <div className="hp-branch-map">
+                                        <iframe
+                                            src={location.mapEmbedUrl}
+                                            allowFullScreen=""
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title={`${location.title} location map`}
+                                        />
+                                    </div>
+                                </article>
+                            ))}
                         </div>
                     </div>
                 </div>

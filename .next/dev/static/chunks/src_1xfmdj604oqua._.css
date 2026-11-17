@@ -260,6 +260,10 @@
     transition-delay: .27s;
   }
 
+  .nav-links.open li:nth-child(7) {
+    transition-delay: .3s;
+  }
+
   .nav-links a {
     letter-spacing: .5px;
     color: var(--text-secondary);
@@ -653,6 +657,54 @@
   transform: translateY(-2px);
 }
 
+.footer-branches-toggle {
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  background: none;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin: 18px 0 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+}
+
+.footer-branches-toggle:hover {
+  color: var(--accent);
+}
+
+.footer-branches-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.footer-col ul.footer-branches-list {
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  transition: max-height .38s, opacity .28s, visibility .28s;
+  overflow: hidden;
+}
+
+.footer-col ul.footer-branches-list--open {
+  opacity: 1;
+  visibility: visible;
+  max-height: 700px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-col ul.footer-branches-list {
+    transition: none;
+  }
+}
+
 /* [project]/src/components/ScrollToTop/ScrollToTop.css [app-client] (css) */
 .scroll-to-top {
   -webkit-backdrop-filter: blur(10px);
@@ -978,6 +1030,10 @@ ul {
   .container {
     padding: 0 16px;
   }
+}
+
+.logo-img, .footer-logo-img, .marquee-logo, .loader-logo {
+  background-color: #000;
 }
 
 @media (max-width: 360px) {

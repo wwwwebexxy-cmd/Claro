@@ -26,21 +26,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 ;
 const slides = [
     {
-        image: '/assets/claro-generated-painting-hero.png',
+        image: '/assets/claro-generated-painting-hero.webp',
         subtitle: 'CLARO · Umm Al Quwain, UAE',
         title: 'Painting <span>Works</span>',
         description: 'Painting, texture finishes and specialist surface treatments for homes and businesses.',
         btnText: 'Explore Services'
     },
     {
-        video: '/assets/claro-gold-finishing.mp4',
+        video: '/assets/claro-gold-finishing.webm',
         subtitle: 'Decorative Surface Finishes',
         title: 'Gold <span>Plating</span>',
         description: 'Gold plating and chrome finishing for a range of materials and decorative pieces.',
         btnText: 'See Our Services'
     },
     {
-        video: '/assets/claro-workshop-finishing.mp4',
+        video: '/assets/claro-workshop-finishing.webm',
         subtitle: 'Painting Works · Umm Al Quwain',
         title: 'Dipping &amp; <span>Chrome Finishing</span>',
         description: 'Explore Claro painting, cleaning and technical service divisions.',
@@ -298,7 +298,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 ;
 ;
 ;
-const LOGO = '/assets/claro-logo.png';
+const LOGO = '/assets/claro-logo.webp';
 const items = [
     {
         icon: 'diamond',
@@ -610,52 +610,52 @@ const CountUp = ({ target, suffix })=>{
 };
 /* tag field removed — badges no longer rendered */ const services = [
     {
-        img: '/assets/claro-painting-work.png',
+        img: '/assets/claro-painting-work.webp',
         title: 'Painting & Texture Work',
         desc: 'Interior and exterior painting with decorative texture finishes.'
     },
     {
-        img: '/assets/claro-gold-plating.jpg',
+        img: '/assets/claro-gold-plating.webp',
         title: 'Gold Plating',
         desc: 'Gold plating for decorative pieces and selected surfaces.'
     },
     {
-        img: '/assets/claro-service-gallery.jpg',
+        img: '/assets/claro-service-gallery.webp',
         title: 'Chrome Finishing',
         desc: 'Chrome finishing for plastic, fiber, steel, metal, wood, stainless steel, mild steel and ceramic.'
     },
     {
-        img: '/assets/claro-dipping-work.jpeg',
+        img: '/assets/claro-dipping-work.webp',
         title: 'Dipping & Spray Painting',
         desc: 'Surface finishing options for a range of shapes, parts and materials.'
     },
     {
-        img: '/assets/claro-bathtub-refinishing.png',
+        img: '/assets/claro-bathtub-refinishing.webp',
         title: 'Bathtub Refinishing',
         desc: 'Refinishing work for worn or stained bathtubs.'
     },
     {
-        img: '/assets/claro-epoxy-floor-coating.png',
+        img: '/assets/claro-epoxy-floor-coating.webp',
         title: 'Epoxy Floor Coating',
         desc: 'Epoxy coating for floors in residential and commercial spaces.'
     },
     {
-        img: '/assets/claro-building-cleaning.png',
+        img: '/assets/claro-building-cleaning.webp',
         title: 'Building Cleaning',
         desc: 'Cleaning services for residential and commercial properties.'
     },
     {
-        img: '/assets/claro-water-tank-cleaning.png',
+        img: '/assets/claro-water-tank-cleaning.webp',
         title: 'Tank & Pipeline Cleaning',
         desc: 'Water tank cleaning and pipeline disinfection.'
     },
     {
-        img: '/assets/claro-electrical-maintenance.png',
+        img: '/assets/claro-electrical-maintenance.webp',
         title: 'Electrical & Plumbing',
         desc: 'Electrical and plumbing maintenance services.'
     },
     {
-        img: '/assets/claro-carpentry-services.png',
+        img: '/assets/claro-carpentry-services.webp',
         title: 'Carpentry & Refurbishment',
         desc: 'Carpentry, flooring installation, ceiling works and property refurbishment.'
     }
@@ -755,7 +755,7 @@ const HomePage = ()=>{
         title: "CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain",
         description: "CLARO provides painting works, cleaning services and technical maintenance for residential and commercial properties in Umm Al Quwain, UAE.",
         ogType: "website",
-        ogImage: "/assets/claro-logo.png",
+        ogImage: "/assets/claro-logo.webp",
         schemas: [
             localBusinessSchema
         ]
@@ -984,7 +984,7 @@ const HomePage = ()=>{
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "hp-about-img-frame",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: "/assets/claro-storefront.jpg",
+                                        src: "/assets/claro-storefront.webp",
                                         alt: "Claro storefront in Umm Al Quwain"
                                     }, void 0, false, {
                                         fileName: "[project]/src/site-pages/HomePage/HomePage.jsx",

@@ -24,7 +24,7 @@ const PageLoader = () => {
       <div className="loader-content">
         <div className="loader-circle"></div>
         <div className="loader-logo-container">
-          <img src="/assets/claro-logo.png" alt="CLARO" className="loader-logo" />
+          <img src="/assets/claro-logo.webp" alt="CLARO" className="loader-logo" />
         </div>
       </div>
     </div>

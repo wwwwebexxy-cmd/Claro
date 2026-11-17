@@ -68,7 +68,7 @@ const Navbar = () => {
             <div className="navbar-container">
                 <motion.div variants={navLinkVariants}>
                     <Link href="/" className="logo" onClick={closeMenu}>
-                        <img src="/assets/claro-logo.png" alt="CLARO" className="logo-img" />
+                        <img src="/assets/claro-logo.webp" alt="CLARO" className="logo-img" />
                     </Link>
                 </motion.div>
 
@@ -86,6 +86,9 @@ const Navbar = () => {
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <Link href="/products" className={isActive('/products')} onClick={closeMenu}>All Services</Link>
+                    </motion.li>
+                    <motion.li variants={navLinkVariants}>
+                        <Link href="/gallery" className={isActive('/gallery')} onClick={closeMenu}>Gallery</Link>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <a href="/#contact" onClick={closeMenu}>Contact</a>

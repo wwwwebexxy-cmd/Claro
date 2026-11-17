@@ -1,7 +1,8 @@
 import HomePage from '../src/site-pages/HomePage/HomePage';
+import { claroMetaDescription, claroSocialImage } from '../src/siteMetadata';
 
 const title = 'CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain';
-const description = 'Explore CLARO painting works, cleaning services and technical maintenance for residential and commercial properties in Umm Al Quwain, UAE.';
+const description = claroMetaDescription;
 export const metadata = {
   title,
   description,
@@ -9,11 +10,13 @@ export const metadata = {
     title,
     description,
     type: 'website',
+    images: [{ url: claroSocialImage, width: 1200, height: 630, alt: 'CLARO logo on a black background' }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
+    images: [claroSocialImage],
   },
 };
 

@@ -1,12 +1,13 @@
 import SiteShell from '../src/components/SiteShell/SiteShell';
+import { claroMetaDescription } from '../src/siteMetadata';
 import '../src/index.css';
 
 export const metadata = {
   title: 'CLARO | Umm Al Quwain, UAE',
-  description: 'Painting works, technical services and cleaning services for residential and commercial properties in Umm Al Quwain, UAE.',
+  description: claroMetaDescription,
   icons: {
-    icon: '/assets/claro-logo.png',
-    apple: '/assets/claro-logo.png',
+    icon: '/favicon.webp',
+    apple: '/assets/claro-logo.webp',
   },
   manifest: '/manifest.json',
 };

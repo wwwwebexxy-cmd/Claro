@@ -11,21 +11,21 @@ import './HeroSlider.css';
 
 const slides = [
   {
-    image: '/assets/claro-generated-painting-hero.png',
+    image: '/assets/claro-generated-painting-hero.webp',
     subtitle: 'CLARO · Umm Al Quwain, UAE',
     title: 'Painting <span>Works</span>',
     description: 'Painting, texture finishes and specialist surface treatments for homes and businesses.',
     btnText: 'Explore Services'
   },
   {
-    video: '/assets/claro-gold-finishing.mp4',
+    video: '/assets/claro-gold-finishing.webm',
     subtitle: 'Decorative Surface Finishes',
     title: 'Gold <span>Plating</span>',
     description: 'Gold plating and chrome finishing for a range of materials and decorative pieces.',
     btnText: 'See Our Services'
   },
   {
-    video: '/assets/claro-workshop-finishing.mp4',
+    video: '/assets/claro-workshop-finishing.webm',
     subtitle: 'Painting Works · Umm Al Quwain',
     title: 'Dipping &amp; <span>Chrome Finishing</span>',
     description: 'Explore Claro painting, cleaning and technical service divisions.',

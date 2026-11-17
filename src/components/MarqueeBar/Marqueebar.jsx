@@ -1,7 +1,7 @@
 import { FaStar, FaDiamond } from 'react-icons/fa6';
 import './Marqueebar.css';
 
-const LOGO = '/assets/claro-logo.png';
+const LOGO = '/assets/claro-logo.webp';
 
 const items = [
   { icon: 'diamond', text: 'Painting Works' },

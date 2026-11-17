@@ -5,6 +5,8 @@ import { FaBolt, FaShieldAlt, FaMagic, FaTint, FaPhoneAlt, FaStar, FaChevronDown
 import './ProductsPage.css';
 import { motion } from 'framer-motion';
 import useSeo from '../../hooks/useSeo';
+import { branchLocationSchemas } from '../../branchLocations';
+import { claroSocialImage } from '../../siteMetadata';
 
 const useReveal = () => {
     const ref = useRef(null);
@@ -29,7 +31,7 @@ const useReveal = () => {
 
 const products = [
     {
-        img: '/assets/claro-painting-work.png',
+        img: '/assets/claro-painting-work.webp',
         alt: 'Painter applying a finish to an interior wall',
         title: ['Painting & ', 'Texture Work'],
         desc: 'Interior and exterior painting, including decorative texture paint work for residential and commercial properties.',
@@ -38,7 +40,7 @@ const products = [
         points: ['Painting works', 'Texture paint work', 'Residential and commercial projects'],
     },
     {
-        img: '/assets/claro-gold-plating.jpeg',
+        img: '/assets/claro-gold-plating-faucet.webp',
         alt: 'Claro gold-plating work on a decorative piece',
         title: ['Gold ', 'Plating'],
         desc: 'Gold plating services for decorative pieces and selected surfaces.',
@@ -48,7 +50,7 @@ const products = [
         reverse: true,
     },
     {
-        img: '/assets/claro-service-gallery.jpg',
+        img: '/assets/claro-service-gallery.webp',
         alt: 'Claro service collage featuring chrome-finished wheels and fixtures',
         title: ['Chrome ', 'Finishing'],
         desc: 'Chrome finishing for plastic, fiber, steel, metal, wood, stainless steel, mild steel and ceramic surfaces.',
@@ -57,7 +59,7 @@ const products = [
         points: ['Plastic and fiber', 'Steel, metal and wood', 'Stainless steel, mild steel and ceramic'],
     },
     {
-        img: '/assets/claro-spray-painting.png',
+        img: '/assets/claro-spray-painting.webp',
         alt: 'Technician spray-painting a surface',
         title: ['Dipping & ', 'Spray Painting'],
         desc: 'Dipping and spray painting works for a range of shapes and surfaces.',
@@ -67,7 +69,7 @@ const products = [
         reverse: true,
     },
     {
-        img: '/assets/claro-bathtub-refinishing.png',
+        img: '/assets/claro-bathtub-refinishing.webp',
         alt: 'Refinished bathtub in a modern bathroom',
         title: ['Bathtub ', 'Refinishing'],
         desc: 'Bathtub refinishing to restore worn or stained surfaces.',
@@ -76,7 +78,7 @@ const products = [
         points: ['Bathtub refinishing', 'Surface restoration', 'A listed Claro painting service'],
     },
     {
-        img: '/assets/claro-epoxy-floor-coating.png',
+        img: '/assets/claro-epoxy-floor-coating.webp',
         alt: 'Epoxy floor coating being applied in a commercial interior',
         title: ['Epoxy Floor ', 'Coating'],
         desc: 'Epoxy floor coating for residential and commercial properties.',
@@ -86,7 +88,7 @@ const products = [
         reverse: true,
     },
     {
-        img: '/assets/claro-building-cleaning.png',
+        img: '/assets/claro-building-cleaning.webp',
         alt: 'Building cleaning in progress',
         title: ['Building Cleaning & ', 'Disinfection'],
         desc: 'Cleaning, disinfection and sterilization services for properties.',
@@ -95,7 +97,7 @@ const products = [
         points: ['Building cleaning', 'Disinfection and sterilization', 'Cleaning for residential and commercial properties'],
     },
     {
-        img: '/assets/claro-water-tank-cleaning.png',
+        img: '/assets/claro-water-tank-cleaning.webp',
         alt: 'Water tank cleaning work',
         title: ['Water Tank & Pipeline ', 'Disinfection'],
         desc: 'Water tank cleaning and pipeline disinfection services.',
@@ -105,7 +107,7 @@ const products = [
         reverse: true,
     },
     {
-        img: '/assets/claro-electrical-maintenance.png',
+        img: '/assets/claro-electrical-maintenance.webp',
         alt: 'Technician carrying out electrical maintenance',
         title: ['Electrical & Plumbing ', 'Maintenance'],
         desc: 'Electrical and plumbing maintenance for residential and commercial properties.',
@@ -114,7 +116,7 @@ const products = [
         points: ['Electrical maintenance', 'Plumbing maintenance', 'Property maintenance services'],
     },
     {
-        img: '/assets/claro-carpentry-services.png',
+        img: '/assets/claro-carpentry-services.webp',
         alt: 'Carpentry work taking place in an interior',
         title: ['Carpentry, Flooring & ', 'Ceiling Works'],
         desc: 'Carpentry services, flooring installation with tile works, ceiling works and property refurbishment.',
@@ -163,7 +165,8 @@ const ProductsPage = () => {
             "@type": "GeoCoordinates",
             "latitude": 25.5039005,
             "longitude": 55.5543137
-        }
+        },
+        "subOrganization": branchLocationSchemas
     };
 
     const serviceSchemas = products.map((service) => ({
@@ -208,7 +211,7 @@ const ProductsPage = () => {
                 "name": "Where is CLARO located?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "CLARO is located at A8 Warehouse, Al Maqta 2, Umm Al Quwain, UAE."
+                    "text": "CLARO is based at A8 Warehouse, Al Maqta 2, Umm Al Quwain, UAE, with Kerala branches in Malaparamba, Kozhikode and Koduvally Road, Omassery."
                 }
             }
         ]
@@ -218,7 +221,7 @@ const ProductsPage = () => {
         title: "CLARO Services | Umm Al Quwain, UAE",
         description: "Explore CLARO painting works, gold plating, chrome finishing, cleaning services and technical maintenance.",
         ogType: "website",
-        ogImage: "/assets/claro-logo.png",
+        ogImage: claroSocialImage,
         schemas: [...serviceSchemas, faqSchema]
     });
 
