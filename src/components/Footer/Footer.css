@@ -108,6 +108,26 @@
     text-align: left;
 }
 
+.footer-col ul.footer-contact-list {
+    width: min(100%, 280px);
+}
+
+.footer-contact-list > li {
+    width: 100%;
+}
+
+.footer-contact-list > li > a.footer-phone-link {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    width: 100%;
+    justify-content: stretch;
+    text-align: left;
+}
+
+.footer-contact-list .footer-phone-link svg {
+    justify-self: center;
+}
+
 .footer-location-icon {
     flex: 0 0 auto;
     margin-top: 4px;

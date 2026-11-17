@@ -67,12 +67,12 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Contact</h4>
                             <ul className="footer-contact-list">
-                                <li><a href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
+                                <li><a className="footer-phone-link" href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
                                 <li><a href="mailto:ajmalclaro@gmail.com"><FaEnvelope size={14} /> ajmalclaro@gmail.com</a></li>
                                 <li><a className="footer-location-link" href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt className="footer-location-icon" size={14} /><span>A8 Warehouse, Al Maqta 2, Umm Al Quwain</span></a></li>
                                 {branchLocations.flatMap((location) => location.phones.map((phone) => (
                                     <li key={`${location.id}-${phone.href}`}>
-                                        <a href={phone.href}><FaPhoneAlt size={14} /> {phone.label} ({location.title})</a>
+                                        <a className="footer-phone-link" href={phone.href}><FaPhoneAlt size={14} /> {phone.label} ({location.title})</a>
                                     </li>
                                 )))}
                             </ul>

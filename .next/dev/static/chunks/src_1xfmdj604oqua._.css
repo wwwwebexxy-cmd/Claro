@@ -497,6 +497,26 @@
   max-width: 240px;
 }
 
+.footer-col ul.footer-contact-list {
+  width: min(100%, 280px);
+}
+
+.footer-contact-list > li {
+  width: 100%;
+}
+
+.footer-contact-list > li > a.footer-phone-link {
+  text-align: left;
+  grid-template-columns: 18px minmax(0, 1fr);
+  justify-content: stretch;
+  width: 100%;
+  display: grid;
+}
+
+.footer-contact-list .footer-phone-link svg {
+  justify-self: center;
+}
+
 .footer-location-icon {
   flex: none;
   margin-top: 4px;
