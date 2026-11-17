@@ -16,6 +16,7 @@ const Footer = () => {
                         <Link href="/" className="logo">
                             <img src="/assets/claro-logo.png" alt="CLARO" className="footer-logo-img" />
                         </Link>
+                        <p className="footer-brand-tagline">PAINTING · TECHNICAL · CLEANING</p>
                         <p>CLARO provides painting works, technical services and cleaning services for residential and commercial properties in Umm Al Quwain, UAE.</p>
                     </div>
 
@@ -66,7 +67,7 @@ const Footer = () => {
                             <ul>
                                 <li><a href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
                                 <li><a href="mailto:ajmalclaro@gmail.com"><FaEnvelope size={14} /> ajmalclaro@gmail.com</a></li>
-                                <li><a href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt size={14} /> A8 Warehouse, Al Maqta 2, Umm Al Quwain</a></li>
+                                <li><a className="footer-location-link" href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt className="footer-location-icon" size={14} /><span>A8 Warehouse, Al Maqta 2, Umm Al Quwain</span></a></li>
                             </ul>
                         </div>
                     </div>
