@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import PageLoader from '../PageLoader/PageLoader';
+import WhatsAppFloat from '../WhatsAppFloat/WhatsAppFloat';
 
 export default function SiteShell({ children }) {
   return (
@@ -11,6 +12,7 @@ export default function SiteShell({ children }) {
       <PageLoader />
       <Navbar />
       {children}
+      <WhatsAppFloat />
       <ScrollToTop />
       <Footer />
     </>
