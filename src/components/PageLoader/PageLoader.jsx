@@ -1,10 +1,12 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import './PageLoader.css';
 
 const PageLoader = () => {
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     setLoading(true);
@@ -13,7 +15,7 @@ const PageLoader = () => {
     }, 600); // Consistent delay for all page changes (including anchors)
 
     return () => clearTimeout(timer);
-  }, [location.pathname, location.hash]);
+  }, [pathname]);
 
   if (!loading) return null;
 
@@ -22,7 +24,7 @@ const PageLoader = () => {
       <div className="loader-content">
         <div className="loader-circle"></div>
         <div className="loader-logo-container">
-          <img src="/assets/carples logo.png" alt="Carplex" className="loader-logo" />
+          <img src="/assets/claro-logo.png" alt="CLARO" className="loader-logo" />
         </div>
       </div>
     </div>

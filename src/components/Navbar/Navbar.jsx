@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './Navbar.css';
@@ -29,7 +32,7 @@ const navLinkVariants = {
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const location = useLocation();
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -48,11 +51,11 @@ const Navbar = () => {
 
     const handleCall = (e) => {
         e.preventDefault();
-        window.location.href = 'tel:+971502292861';
+        window.location.href = 'tel:+971545484873';
         setTimeout(() => setMenuOpen(false), 150);
     };
 
-    const isActive = (path) => location.pathname === path ? 'active' : '';
+    const isActive = (path) => pathname === path ? 'active' : '';
 
     return (
         <motion.nav
@@ -64,8 +67,8 @@ const Navbar = () => {
         >
             <div className="navbar-container">
                 <motion.div variants={navLinkVariants}>
-                    <Link to="/" className="logo" onClick={closeMenu}>
-                        <img src="/assets/carples logo.png" alt="Carplex" className="logo-img" />
+                    <Link href="/" className="logo" onClick={closeMenu}>
+                        <img src="/assets/claro-logo.png" alt="CLARO" className="logo-img" />
                     </Link>
                 </motion.div>
 
@@ -73,7 +76,7 @@ const Navbar = () => {
 
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <motion.li variants={navLinkVariants}>
-                        <Link to="/" className={isActive('/')} onClick={closeMenu}>Home</Link>
+                        <Link href="/" className={isActive('/')} onClick={closeMenu}>Home</Link>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <a href="/#about" onClick={closeMenu}>About</a>
@@ -82,13 +85,13 @@ const Navbar = () => {
                         <a href="/#services" onClick={closeMenu}>Services</a>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
-                        <Link to="/products" className={isActive('/products')} onClick={closeMenu}>Products</Link>
+                        <Link href="/products" className={isActive('/products')} onClick={closeMenu}>All Services</Link>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <a href="/#contact" onClick={closeMenu}>Contact</a>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
-                        <a href="tel:+971502292861" className="nav-cta" onClick={handleCall}>
+                        <a href="tel:+971545484873" className="nav-cta" onClick={handleCall}>
                             <FaPhoneAlt size={13} /> Call Now
                         </a>
                     </motion.li>

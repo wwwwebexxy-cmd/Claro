@@ -11,25 +11,25 @@ import './HeroSlider.css';
 
 const slides = [
   {
-    image: '/assets/trusted-auto-upgrades.png',
-    subtitle: 'Dubai\'s Trusted Auto Upgrades',
-    title: 'Precision &amp; <span>Prestige</span>',
-    description: 'Transform your vehicle with our premium range of top-tier accessories. From android systems to custom seat covers.',
-    btnText: 'Explore Collection'
+    image: '/assets/claro-generated-painting-hero.png',
+    subtitle: 'CLARO · Umm Al Quwain, UAE',
+    title: 'Painting <span>Works</span>',
+    description: 'Painting, texture finishes and specialist surface treatments for homes and businesses.',
+    btnText: 'Explore Services'
   },
   {
-    image: '/assets/upholstery-worksa.png',
-    subtitle: 'Luxury Redefined',
-    title: 'Custom <span>upholstery works</span>',
-    description: 'Bespoke designs tailored to your style. Experience the pinnacle of automotive interior craftsmanship.',
+    video: '/assets/claro-gold-finishing.mp4',
+    subtitle: 'Decorative Surface Finishes',
+    title: 'Gold <span>Plating</span>',
+    description: 'Gold plating and chrome finishing for a range of materials and decorative pieces.',
+    btnText: 'See Our Services'
+  },
+  {
+    video: '/assets/claro-workshop-finishing.mp4',
+    subtitle: 'Painting Works · Umm Al Quwain',
+    title: 'Dipping &amp; <span>Chrome Finishing</span>',
+    description: 'Explore Claro painting, cleaning and technical service divisions.',
     btnText: 'View Services'
-  },
-  {
-    image: '/assets/Advanced-Technology.png',
-    subtitle: 'Advanced Technology',
-    title: 'Smart <span>Integration</span>',
-    description: 'Stay connected and safe on the road with our cutting-edge 360° cameras and OEM-integrated Android screens.',
-    btnText: 'Upgrade Now'
   }
 ];
 
@@ -158,14 +158,16 @@ const HeroSlider = () => {
             {/* ── Animated Background Image (zoom-out) ── */}
             <motion.div
               className="parallax-bg"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
+              style={slide.image ? { backgroundImage: `url(${slide.image})` } : undefined}
               variants={bgVariants}
               initial="initial"
               animate={activeIndex === index ? 'animate' : 'initial'}
               key={`bg-${index}-${activeIndex === index ? 'active' : 'idle'}`}
-            />
+            >
+              {slide.video && (
+                <video src={slide.video} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
+              )}
+            </motion.div>
 
             <div className="slide-overlay"></div>
 

@@ -1,6 +1,8 @@
+'use client';
+
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebook, FaWhatsapp, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,18 +13,19 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-top">
                     <div className="footer-brand">
-                        <Link to="/" className="logo">
-                            <img src="/assets/carples logo.png" alt="Carplex" className="footer-logo-img" />
+                        <Link href="/" className="logo">
+                            <img src="/assets/claro-logo.png" alt="CLARO" className="footer-logo-img" />
                         </Link>
-                        <p>Dubai's trusted premium car accessories provider. Transforming rides since 2014 with quality installations and premium products.</p>
+                        <p className="footer-brand-tagline">PAINTING · TECHNICAL · CLEANING</p>
+                        <p>CLARO provides painting works, technical services and cleaning services for residential and commercial properties in Umm Al Quwain, UAE.</p>
                     </div>
 
                     <div className="footer-top-grid">
                         <div className="footer-col">
                             <h4>Quick Links</h4>
                             <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/products">Products</Link></li>
+                                <li><Link href="/">Home</Link></li>
+                                <li><Link href="/products">Services</Link></li>
                                 <li><a href="/#services">Services</a></li>
                                 <li><a href="/#about">About Us</a></li>
                                 <li><a href="/#contact">Contact</a></li>
@@ -32,21 +35,21 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Services</h4>
                             <ul>
-                                <li><Link to="/products">Android Upgrade</Link></li>
-                                <li><Link to="/products">360° Camera System</Link></li>
-                                <li><Link to="/products">Premium Seat Covers</Link></li>
-                                <li><Link to="/products">Premium Car Tinting</Link></li>
-                                <li><Link to="/products">Upholstery Works</Link></li>
+                                <li><Link href="/products">Painting & Texture Work</Link></li>
+                                <li><Link href="/products">Gold Plating</Link></li>
+                                <li><Link href="/products">Chrome Finishing</Link></li>
+                                <li><Link href="/products">Dipping & Spray Painting</Link></li>
+                                <li><Link href="/products">Bathtub Refinishing</Link></li>
                             </ul>
 
                             {/* Collapsible extra services */}
                             <div className={`services-extra ${servicesExpanded ? 'services-extra--open' : ''}`}>
                                 <ul>
-                                    <li><Link to="/products">Car Stereo Upgrade</Link></li>
-                                    <li><Link to="/products">Sound Horns</Link></li>
-                                    <li><Link to="/products">Smart Lock Systems</Link></li>
-                                    <li><Link to="/products">Car Batteries</Link></li>
-                                    <li><Link to="/products">LED Lighting Upgrade</Link></li>
+                                    <li><Link href="/products">Epoxy Floor Coating</Link></li>
+                                    <li><Link href="/products">Building Cleaning</Link></li>
+                                    <li><Link href="/products">Water Tank Cleaning</Link></li>
+                                    <li><Link href="/products">Electrical & Plumbing</Link></li>
+                                    <li><Link href="/products">Carpentry & Property Refurbishment</Link></li>
                                 </ul>
                             </div>
 
@@ -62,10 +65,9 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Contact</h4>
                             <ul>
-                                <li><a href="tel:+(04)271 1275"><FaPhoneAlt size={11} /> +(04)271 1275</a></li>
-                                <li><a href="tel:+971502292861"><FaPhoneAlt size={14} /> +971 50 229 2861</a></li>
-                                <li><a href="mailto:carplexdxb@gmail.com"><FaEnvelope size={14} /> carplexdxb@gmail.com</a></li>
-                                <li><span><FaMapMarkerAlt size={14} /> Ras Al Khor, Dubai</span></li>
+                                <li><a href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
+                                <li><a href="mailto:ajmalclaro@gmail.com"><FaEnvelope size={14} /> ajmalclaro@gmail.com</a></li>
+                                <li><a className="footer-location-link" href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt className="footer-location-icon" size={14} /><span>A8 Warehouse, Al Maqta 2, Umm Al Quwain</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -73,15 +75,15 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <div className="footer-copyright">
-                        <p>&copy; {new Date().getFullYear()} Carplex Car Accessories LLC. All rights reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} CLARO. All rights reserved.</p>
                         <p className="developer-credit">
-                            Developed by <a href="https://suhadigitech.com" target="_blank" rel="noopener noreferrer">Suha Digitech</a>
+                            Painting Works · Technical Services · Cleaning Services
                         </p>
                     </div>
                     <div className="social-links">
-                        <a href="https://www.instagram.com/carplex_accessories?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="social-link" aria-label="Instagram"><FaInstagram /></a>
-                        <a href="https://www.facebook.com/share/18UB5SKYLf/?mibextid=wwXIfr" className="social-link" aria-label="Facebook"><FaFacebook /></a>
-                        <a href="https://wa.me/971502292861" className="social-link" aria-label="WhatsApp"><FaWhatsapp /></a>
+                        <a href="https://www.instagram.com/claroheadlight_uae?utm_source=qr" className="social-link" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="tel:+971545484873" className="social-link" aria-label="Call CLARO"><FaPhoneAlt /></a>
+                        <a href="https://www.google.com/maps?q=25.5039005,55.5543137" className="social-link" aria-label="CLARO location"><FaMapMarkerAlt /></a>
                     </div>
                 </div>
             </div>

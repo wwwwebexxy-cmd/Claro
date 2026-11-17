@@ -26,7 +26,7 @@
     /* Fluid scaling between 80px and 150px */
     width: auto;
     max-width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -38,6 +38,14 @@
     color: var(--text-secondary);
     font-size: 16px;
     line-height: 1.8;
+}
+
+.footer-brand .footer-brand-tagline {
+    margin: 0 0 16px;
+    color: #8a8379;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .footer-top-grid {
@@ -92,6 +100,17 @@
 .footer-col ul li a:hover {
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+.footer-col ul li a.footer-location-link {
+    align-items: flex-start;
+    max-width: 240px;
+    text-align: left;
+}
+
+.footer-location-icon {
+    flex: 0 0 auto;
+    margin-top: 4px;
 }
 
 .footer-bottom {
@@ -168,7 +187,7 @@
 
     .footer-logo-img {
         height: clamp(70px, 20vw, 110px);
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
 }
 
@@ -176,7 +195,7 @@
 @media (max-width: 480px) {
     .footer-logo-img {
         height: clamp(60px, 22vw, 90px);
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 }
 
