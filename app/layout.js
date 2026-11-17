@@ -6,8 +6,8 @@ export const metadata = {
   title: 'CLARO | Umm Al Quwain, UAE',
   description: claroMetaDescription,
   icons: {
-    icon: '/favicon.webp',
-    apple: '/assets/claro-logo.webp',
+    icon: '/icon',
+    apple: '/icon',
   },
   manifest: '/manifest.json',
 };

@@ -1052,10 +1052,6 @@ ul {
   }
 }
 
-.marquee-logo {
-  background-color: #000;
-}
-
 @media (max-width: 360px) {
   html {
     font-size: 14px;

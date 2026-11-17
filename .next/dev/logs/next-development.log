@@ -37,3 +37,24 @@
 {"timestamp":"03:05:11.270","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"03:05:18.544","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"03:06:08.827","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:09:11.665","source":"Server","level":"LOG","message":"✓ Compiled in 3.9s"}
+{"timestamp":"03:09:14.670","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.674","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.794","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.794","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.857","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.857","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.953","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:14.955","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:15.032","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:15.033","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:16.702","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:09:17.709","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:17.710","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:17.893","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:17.894","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:23.606","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"03:09:24.522","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:24.523","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:24.638","source":"Server","level":"WARN","message":"Invalid value \"189\" for \"height\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}
+{"timestamp":"03:09:24.638","source":"Server","level":"WARN","message":"Invalid value \"460\" for \"width\". Expected a number, \"auto\", or a percentage value (e.g., \"50%\")."}

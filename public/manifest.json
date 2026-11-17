@@ -3,13 +3,8 @@
   "name": "CLARO Umm Al Quwain",
   "icons": [
     {
-      "src": "/logo192.webp",
-      "type": "image/webp",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/logo512.webp",
-      "type": "image/webp",
+      "src": "/icon",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
