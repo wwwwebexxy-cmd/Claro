@@ -1,14 +1,17 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import {
     FaAward, FaShieldAlt,
     FaBolt, FaStar, FaMapMarkerAlt, FaPhoneAlt,
-    FaClock, FaEnvelope, 
+    FaEnvelope,
 } from 'react-icons/fa';
 import HeroSlider from '../../components/HeroSlider/HeroSlider';
 import MarqueeBar from '../../components/MarqueeBar/Marqueebar';
 import useSeo from '../../hooks/useSeo';
 import './HomePage.css';
 
+const locationUrl = 'https://www.google.com/maps?q=25.5039005,55.5543137';
 
 const useReveal = () => {
     const ref = useRef(null);
@@ -60,30 +63,30 @@ const CountUp = ({ target, suffix }) => {
 
 /* tag field removed — badges no longer rendered */
 const services = [
-    { img: '/assets/Android-Upgrade-card.png',  title: 'Android Upgrade',      desc: 'Latest infotainment with GPS, Apple CarPlay, streaming & full touchscreen control.' },
-    { img: '/assets/camera-360.png',       title: '360° Camera System',   desc: "Bird's-eye surround view for safe parking and effortless maneuvering."              },
-    { img: '/assets/seat-covers-a.png',      title: 'Premium Seat Covers',  desc: 'Luxury leather & diamond-stitched custom covers that transform your cabin.'          },
-    { img: '/assets/Upholstery-Works-c.png',  title: 'Upholstery Works',     desc: 'Professional restoration for seats, door panels and interior trim.'                  },
-    { img: '/assets/car-tinting.png',      title: 'Premium Car Tinting',  desc: 'UV & heat-rejecting films for privacy, comfort and style.'                          },
-    { img: '/assets/LED-Lights.png',      title: 'LED Lighting Upgrade',  desc: 'Upgraded look with energy-efficient, premium LED lighting for enhanced visibility and modern style.'                },
-    { img: '/assets/sound-horns.png',      title: 'Sound Horns',          desc: 'Dual-tone & multi-tone horn systems for enhanced audibility and modern style.'        },
-    { img: '/assets/car-stereo.png',       title: 'Car Stereo Upgrade',   desc: 'High-fidelity speakers, subwoofers, and amps for immersive sound.'                   },
-    { img: '/assets/lock-system.png',      title: 'Smart Lock Systems',   desc: 'Keyless entry, alarm features and smart security for maximum protection.'            },
-    { img: '/assets/car-batteries.png',    title: 'Car Batteries',        desc: 'Premium automotive batteries built for all-weather reliability.'                     },
+    { img: '/assets/claro-painting-work.png', title: 'Painting & Texture Work', desc: 'Interior and exterior painting with decorative texture finishes.' },
+    { img: '/assets/claro-gold-plating.jpg', title: 'Gold Plating', desc: 'Gold plating for decorative pieces and selected surfaces.' },
+    { img: '/assets/claro-service-gallery.jpg', title: 'Chrome Finishing', desc: 'Chrome finishing for plastic, fiber, steel, metal, wood, stainless steel, mild steel and ceramic.' },
+    { img: '/assets/claro-dipping-work.jpeg', title: 'Dipping & Spray Painting', desc: 'Surface finishing options for a range of shapes, parts and materials.' },
+    { img: '/assets/claro-bathtub-refinishing.png', title: 'Bathtub Refinishing', desc: 'Refinishing work for worn or stained bathtubs.' },
+    { img: '/assets/claro-epoxy-floor-coating.png', title: 'Epoxy Floor Coating', desc: 'Epoxy coating for floors in residential and commercial spaces.' },
+    { img: '/assets/claro-building-cleaning.png', title: 'Building Cleaning', desc: 'Cleaning services for residential and commercial properties.' },
+    { img: '/assets/claro-water-tank-cleaning.png', title: 'Tank & Pipeline Cleaning', desc: 'Water tank cleaning and pipeline disinfection.' },
+    { img: '/assets/claro-electrical-maintenance.png', title: 'Electrical & Plumbing', desc: 'Electrical and plumbing maintenance services.' },
+    { img: '/assets/claro-carpentry-services.png', title: 'Carpentry & Refurbishment', desc: 'Carpentry, flooring installation, ceiling works and property refurbishment.' },
 ];
 
 const stats = [
-    { num: 5000, suffix: '+', label: 'Cars Upgraded'    },
-    { num: 50,   suffix: '+', label: 'Premium Products' },
-    { num: 100,  suffix: '%', label: 'Satisfaction'     },
-    { num: 15,   suffix: '+', label: 'Expert Staff'     },
+    { num: 3, suffix: '', label: 'Service Divisions' },
+    { num: 8, suffix: '', label: 'Painting Services' },
+    { num: 4, suffix: '', label: 'Cleaning Services' },
+    { num: 6, suffix: '', label: 'Technical Services' },
 ];
 
 const features = [
-    { icon: <FaAward />,     label: 'Certified Professionals', sub: 'Factory-trained technicians' },
-    { icon: <FaShieldAlt />, label: 'Warranty Covered',        sub: 'All work fully guaranteed'   },
-    { icon: <FaBolt />,      label: 'Fast Installation',       sub: 'Same-day service available'  },
-    { icon: <FaStar />,      label: 'Premium Quality',         sub: 'Top-grade materials only'    },
+    { icon: <FaAward />, label: 'Professionalism', sub: 'A core company value' },
+    { icon: <FaShieldAlt />, label: 'Expertise', sub: 'Painting, cleaning and technical services' },
+    { icon: <FaBolt />, label: 'Client-Centric', sub: 'Focused on each project' },
+    { icon: <FaStar />, label: 'Residential & Commercial', sub: 'Services for both property types' },
 ];
 
 const HomePage = () => {
@@ -100,52 +103,29 @@ const HomePage = () => {
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://carplexuae.com/#organization",
-        "name": "Carplex Car Accessories LLC",
-        "legalName": "Carplex Car Accessories LLC",
-        "url": "https://carplexuae.com/",
-        "logo": "https://carplexuae.com/assets/carples-logo-top.png",
-        "image": "https://carplexuae.com/assets/interior-design.png",
-        "description": "Premium car accessories shop in Nad Al Hammar, Dubai. Specializing in Android screen upgrades, 360 camera installation, seat covers, custom upholstery, window tinting, and audio upgrades.",
-        "telephone": "+971502292861",
-        "email": "info@carplexuae.com",
+        "name": "CLARO",
+        "description": "A customer-focused service provider in Umm Al Quwain specializing in painting works, technical services and cleaning services.",
+        "telephone": "+971545484873",
+        "email": "ajmalclaro@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Al Mansoori Building, Shop 04, Nad Al Hammar",
-            "addressLocality": "Dubai",
-            "addressRegion": "Dubai",
+            "streetAddress": "A8 Warehouse, Al Maqta 2",
+            "addressLocality": "Umm Al Quwain",
+            "addressRegion": "Umm Al Quwain",
             "addressCountry": "AE"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 25.19,
-            "longitude": 55.35
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-                "opens": "09:30",
-                "closes": "22:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Friday",
-                "opens": "16:30",
-                "closes": "22:30"
-            }
-        ],
-        "sameAs": [
-            "https://www.instagram.com/carplex_accessories"
-        ]
+            "latitude": 25.5039005,
+            "longitude": 55.5543137
+        }
     };
 
     useSeo({
-        title: "Carplex Car Accessories | Premium Auto Upgrades in Dubai",
-        description: "Upgrade your ride at Dubai's #1 car accessories shop. We specialize in plug-and-play Android screens, 360° surround-view cameras, custom leather seat covers, full upholstery, heat-rejecting ceramic tinting, and audio upgrades in Nad Al Hammar.",
-        canonicalUrl: "https://carplexuae.com/",
+        title: "CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain",
+        description: "CLARO provides painting works, cleaning services and technical maintenance for residential and commercial properties in Umm Al Quwain, UAE.",
         ogType: "website",
-        ogImage: "https://carplexuae.com/assets/carplex-logo-top.png",
+        ogImage: "/assets/claro-logo.png",
         schemas: [localBusinessSchema]
     });
 
@@ -203,25 +183,25 @@ const HomePage = () => {
                 <div className="container hp-about-grid">
                     <div className="hp-about-visual reveal">
                         <div className="hp-about-img-frame">
-                            <img src="/assets/interior-design.png" alt="Carplex workshop" />
+                            <img src="/assets/claro-storefront.jpg" alt="Claro storefront in Umm Al Quwain" />
                         </div>
                     </div>
                     <div className="hp-about-text reveal">
                         <div className="hp-section-eyebrow hp-eyebrow-left">
                             <span className="hp-eyebrow-line" />
-                            <span className="hp-eyebrow-text">Why Carplex</span>
+                            <span className="hp-eyebrow-text">About CLARO</span>
                         </div>
                         <h2 className="hp-section-heading">
-                            Dubai's #1<br /><em>Car Accessories</em><br />Specialist
+                            Your Trusted<br /><em>Service</em><br />Provider
                         </h2>
                         <p>
-                            With over a decade in the UAE automotive market, Carplex has built a
-                            reputation for premium quality, expert installations, and service that
-                            never compromises.
+                            CLARO is a trusted, customer-focused service provider in Umm Al Quwain,
+                            specializing in high-quality painting works, reliable technical services
+                            and hygienic water tank cleaning for residential and commercial properties.
                         </p>
                         <p>
-                            Our technicians use only the finest materials and latest technology —
-                            because your car deserves nothing less.
+                            Professionalism, expertise and a client-centric approach guide our work
+                            across every service division.
                         </p>
                         <div className="hp-features-grid">
                             {features.map((f, i) => (
@@ -251,19 +231,20 @@ const HomePage = () => {
                             {[
                                 {
                                     icon: <FaMapMarkerAlt />, title: 'Find Us',
-                                    lines: ['Al Mansoori Building, Shop 04','Nad Al Hmmar, Dubai — UAE','Ras Al Khor, Dubai — UAE'],
+                                    lines: ['A8 Warehouse, Al Maqta 2', 'Umm Al Quwain, UAE'],
+                                    links: [{ href: locationUrl, label: 'Open in Google Maps' }],
                                 },
                                 {
                                     icon: <FaPhoneAlt />, title: 'Call Us',
-                                    links: [{ href: 'tel:+0042711275', label: '+(04) 271 1275' },{ href: 'tel:+971502292861', label: '+971 50 229 2861' }],
+                                    links: [{ href: 'tel:+971545484873', label: '+971 54 548 4873' }],
                                 },
                                 {
-                                    icon: <FaClock />, title: 'Open Hours',
-                                    lines: ['Sat – Thu: 9:30 AM – 10:00 PM','Friday: 4:30 PM – 10:30 PM'],
+                                    icon: <FaStar />, title: 'Service Divisions',
+                                    lines: ['Painting Works', 'Cleaning Services', 'Technical Services'],
                                 },
                                 {
                                     icon: <FaEnvelope />, title: 'Email',
-                                    links: [{ href: 'mailto:info@carplexuae.com', label: 'info@carplexuae.com' }],
+                                    links: [{ href: 'mailto:ajmalclaro@gmail.com', label: 'ajmalclaro@gmail.com' }],
                                 },
                             ].map((item, i) => (
                                 <div className="hp-contact-card" key={i}>
@@ -278,10 +259,10 @@ const HomePage = () => {
                         </div>
                         <div className="hp-map reveal">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.0!2d55.35!3d25.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzI0LjAiTiA1NcKwMjEnMDAuMCJF!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
+                                src="https://www.google.com/maps?q=25.5039005,55.5543137&output=embed"
                                 allowFullScreen="" loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Carplex location"
+                                title="CLARO location in Umm Al Quwain"
                             />
                         </div>
                     </div>
