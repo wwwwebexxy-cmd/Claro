@@ -194,10 +194,7 @@ ul {
   }
 }
 
-.logo-img,
-.footer-logo-img,
-.marquee-logo,
-.loader-logo {
+.marquee-logo {
   background-color: #000;
 }
 
