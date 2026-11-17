@@ -80,7 +80,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="social-links">
-                        <a href="https://www.instagram.com/claroheadlight.uae/" className="social-link" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="https://www.instagram.com/claroheadlight_uae?utm_source=qr" className="social-link" aria-label="Instagram"><FaInstagram /></a>
                         <a href="tel:+971545484873" className="social-link" aria-label="Call CLARO"><FaPhoneAlt /></a>
                         <a href="https://www.google.com/maps?q=25.5039005,55.5543137" className="social-link" aria-label="CLARO location"><FaMapMarkerAlt /></a>
                     </div>

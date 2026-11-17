@@ -85,7 +85,7 @@ const Navbar = () => {
                         <a href="/#services" onClick={closeMenu}>Services</a>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
-                        <Link href="/products" className={isActive('/products')} onClick={closeMenu}>Services</Link>
+                        <Link href="/products" className={isActive('/products')} onClick={closeMenu}>All Services</Link>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <a href="/#contact" onClick={closeMenu}>Contact</a>
