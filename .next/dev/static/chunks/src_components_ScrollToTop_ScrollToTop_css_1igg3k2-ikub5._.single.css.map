@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/ScrollToTop/ScrollToTop.css"],"sourcesContent":[".scroll-to-top {\n  position: fixed;\n  bottom: 40px;\n  right: 40px;\n  width: 50px;\n  height: 50px;\n  background: rgba(16, 16, 16, 0.8);\n  backdrop-filter: blur(10px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  color: #fff;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  z-index: 999;\n  opacity: 0;\n  visibility: hidden;\n  transform: translateY(20px) scale(0.8);\n  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);\n  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);\n}\n\n.scroll-to-top.visible {\n  opacity: 1;\n  visibility: visible;\n  transform: translateY(0) scale(1);\n}\n\n.scroll-to-top:hover {\n  background: var(--accent);\n  color: #fff;\n  border-color: var(--accent);\n  transform: translateY(-5px) scale(1.1);\n  box-shadow: 0 15px 30px var(--accent-glow);\n}\n\n@media (max-width: 768px) {\n  .scroll-to-top {\n    bottom: 30px;\n    right: 20px;\n    width: 44px;\n    height: 44px;\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;;;AAuBA;;;;;;AAMA;;;;;;;;AAQA;EACE"}}]
+}

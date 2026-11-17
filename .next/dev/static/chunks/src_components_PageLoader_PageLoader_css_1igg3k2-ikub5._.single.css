@@ -1,0 +1,71 @@
+/* [project]/src/components/PageLoader/PageLoader.css [app-client] (css) */
+.page-loader {
+  z-index: 9999;
+  background: #0a0a0a;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transition: all .6s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader-content {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.loader-circle {
+  border: 4px solid #0000;
+  border-top-color: var(--accent);
+  border-right-color: var(--accent);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: 1s linear infinite spin;
+}
+
+.loader-logo-container {
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  max-width: 80vw;
+  animation: 2s ease-in-out infinite pulse-logo;
+  display: flex;
+}
+
+.loader-logo {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-logo {
+  0%, 100% {
+    opacity: .7;
+    transform: scale(.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.page-loader-fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=src_components_PageLoader_PageLoader_css_1igg3k2-ikub5._.single.css.map*/

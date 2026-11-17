@@ -1,0 +1,49 @@
+/* [project]/src/components/ScrollToTop/ScrollToTop.css [app-client] (css) */
+.scroll-to-top {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  background: #101010cc;
+  border: 1px solid #ffffff1a;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  transition: all .4s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transform: translateY(20px) scale(.8);
+  box-shadow: 0 10px 40px #00000080;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 15px 30px var(--accent-glow);
+  transform: translateY(-5px) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 30px;
+    right: 20px;
+  }
+}
+
+/*# sourceMappingURL=src_components_ScrollToTop_ScrollToTop_css_1igg3k2-ikub5._.single.css.map*/

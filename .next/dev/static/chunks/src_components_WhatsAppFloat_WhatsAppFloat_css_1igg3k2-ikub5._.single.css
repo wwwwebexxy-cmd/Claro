@@ -1,0 +1,41 @@
+/* [project]/src/components/WhatsAppFloat/WhatsAppFloat.css [app-client] (css) */
+.whatsapp-float {
+  z-index: 998;
+  color: #fff;
+  background: #25d366;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  font-size: 30px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  box-shadow: 0 8px 24px #00000059;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px #0000006b;
+}
+
+.whatsapp-float:focus-visible {
+  outline-offset: 3px;
+  outline: 3px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 27px;
+    bottom: 30px;
+    left: 20px;
+  }
+}
+
+/*# sourceMappingURL=src_components_WhatsAppFloat_WhatsAppFloat_css_1igg3k2-ikub5._.single.css.map*/
