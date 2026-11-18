@@ -53,10 +53,8 @@ export default function GalleryPage() {
                                         <video
                                             src={item.src}
                                             poster={item.poster}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            preload="auto"
+                                            controls
+                                            preload="none"
                                             playsInline
                                             aria-label={item.alt}
                                         />
