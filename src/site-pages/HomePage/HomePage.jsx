@@ -327,19 +327,23 @@ const HomePage = () => {
                                                 ))}
                                             </div>
                                         </div>
-                                        <a className="hp-branch-directions" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
-                                            Open map
-                                        </a>
+                                        {location.mapUrl && (
+                                            <a className="hp-branch-directions" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
+                                                Open map
+                                            </a>
+                                        )}
                                     </div>
-                                    <div className="hp-branch-map">
-                                        <iframe
-                                            src={location.mapEmbedUrl}
-                                            allowFullScreen=""
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                            title={`${location.title} location map`}
-                                        />
-                                    </div>
+                                    {location.mapEmbedUrl && (
+                                        <div className="hp-branch-map">
+                                            <iframe
+                                                src={location.mapEmbedUrl}
+                                                allowFullScreen=""
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer-when-downgrade"
+                                                title={`${location.title} location map`}
+                                            />
+                                        </div>
+                                    )}
                                 </article>
                             ))}
                         </div>

@@ -1,20 +1,5 @@
 export const branchLocations = [
     {
-        id: 'kozhikode',
-        title: 'Kozhikode - Malaparamba',
-        address: 'Malaparamba, Kozhikode, Kerala, India',
-        phones: [
-            { label: '+91 80860 08740', href: 'tel:+918086008740' },
-            { label: '+91 99473 83802', href: 'tel:+919947383802' },
-        ],
-        mapUrl: 'https://maps.google.com/?q=11.289016,75.808731',
-        mapEmbedUrl: 'https://www.google.com/maps?q=11.289016,75.808731&output=embed',
-        latitude: 11.289016,
-        longitude: 75.808731,
-        streetAddress: 'Malaparamba',
-        addressLocality: 'Kozhikode',
-    },
-    {
         id: 'omassery',
         title: 'Omassery',
         address: 'Koduvally Road, Omassery, Kerala, India',
@@ -46,5 +31,5 @@ export const branchLocationSchemas = branchLocations.map((location) => ({
         latitude: location.latitude,
         longitude: location.longitude,
     },
-    hasMap: location.mapUrl,
+    ...(location.mapUrl ? { hasMap: location.mapUrl } : {}),
 }));

@@ -211,7 +211,7 @@ const ProductsPage = () => {
                 "name": "Where is CLARO located?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "CLARO is based at A8 Warehouse, Al Maqta 2, Umm Al Quwain, UAE, with Kerala branches in Malaparamba, Kozhikode and Koduvally Road, Omassery."
+                    "text": "CLARO is based at A8 Warehouse, Al Maqta 2, Umm Al Quwain, UAE, with a Kerala branch on Koduvally Road, Omassery."
                 }
             }
         ]

@@ -101,7 +101,7 @@
   transform: translateY(-2px);
 }
 
-.footer-col ul li a.footer-location-link {
+.footer-col ul li .footer-location-link {
   text-align: left;
   align-items: flex-start;
   max-width: 240px;

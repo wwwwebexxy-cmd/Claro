@@ -92,10 +92,17 @@ const Footer = () => {
                             >
                                 {branchLocations.map((location) => (
                                     <li key={location.id}>
-                                        <a className="footer-location-link" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
-                                            <FaMapMarkerAlt className="footer-location-icon" size={14} />
-                                            <span>{location.title}: {location.address}</span>
-                                        </a>
+                                        {location.mapUrl ? (
+                                            <a className="footer-location-link" href={location.mapUrl} target="_blank" rel="noopener noreferrer">
+                                                <FaMapMarkerAlt className="footer-location-icon" size={14} />
+                                                <span>{location.title}: {location.address}</span>
+                                            </a>
+                                        ) : (
+                                            <div className="footer-location-link">
+                                                <FaMapMarkerAlt className="footer-location-icon" size={14} />
+                                                <span>{location.title}: {location.address}</span>
+                                            </div>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

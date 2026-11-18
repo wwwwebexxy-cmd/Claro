@@ -98,6 +98,10 @@
     background: #080808;
 }
 
+.gallery-card-media--portrait { aspect-ratio: 3 / 4; }
+.gallery-card-media--vertical { aspect-ratio: 9 / 16; }
+.gallery-card-media--wide { aspect-ratio: 16 / 9; }
+
 .gallery-card-media img,
 .gallery-card-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
 

@@ -1,4 +1,7 @@
 const categoryLabels = {
+    'gold-plating': 'Gold Plating',
+    chrome: 'Chrome',
+    dipping: 'Dipping',
     texture: 'Painting & Texture',
     finishing: 'Decorative Finishes',
     automotive: 'Automotive Finishes',
@@ -6,21 +9,25 @@ const categoryLabels = {
     videos: 'Project Videos',
 };
 
-const image = (id, title, category, filename, alt) => ({
+const image = (id, title, category, filename, alt, finishCategory = null, mediaShape = null) => ({
     id,
     title,
     category,
     categoryLabel: categoryLabels[category],
+    finishCategory,
+    mediaShape,
     type: 'image',
     src: `/assets/gallery/${filename}`,
     alt,
 });
 
-const video = (id, title, filename, poster, alt) => ({
+const video = (id, title, filename, poster, alt, finishCategory = null, mediaShape = null) => ({
     id,
     title,
     category: 'videos',
-    categoryLabel: categoryLabels.videos,
+    categoryLabel: finishCategory ? categoryLabels[finishCategory] : categoryLabels.videos,
+    finishCategory,
+    mediaShape,
     type: 'video',
     src: `/assets/gallery/${filename}`,
     poster: `/assets/gallery/${poster}`,
@@ -29,11 +36,64 @@ const video = (id, title, filename, poster, alt) => ({
 
 export const galleryCategories = [
     { id: 'all', label: 'All Work' },
+    { id: 'gold-plating', label: categoryLabels['gold-plating'] },
+    { id: 'chrome', label: categoryLabels.chrome },
+    { id: 'dipping', label: categoryLabels.dipping },
     { id: 'texture', label: categoryLabels.texture },
     { id: 'finishing', label: categoryLabels.finishing },
     { id: 'automotive', label: categoryLabels.automotive },
     { id: 'samples', label: categoryLabels.samples },
     { id: 'videos', label: 'Videos' },
+];
+
+const uploadedFinishPhotos = [
+    ['chrome-upload-01', 'Chrome Tubular Trim', 'chrome', 'Pair of polished chrome tubular automotive trims photographed on carpet.'],
+    ['chrome-upload-02', 'Chrome Plated Panel', 'chrome', 'A close view of a polished chrome automotive panel and its mounting tabs.'],
+    ['chrome-upload-03', 'Chrome Fairing Detail', 'chrome', 'Reflective chrome fairing detail with visible openings and fastener points.'],
+    ['chrome-upload-04', 'Toyota Chrome Emblem', 'chrome', 'A Toyota emblem on a polished chrome vehicle trim piece.'],
+    ['chrome-upload-05', 'Chrome Trim Cover', 'chrome', 'A polished chrome trim cover shown from the reverse side.'],
+    ['chrome-upload-06', 'Chrome Housing Detail', 'chrome', 'A reflective chrome housing with a vented circular opening.'],
+    ['chrome-upload-07', 'Chrome Body Cover', 'chrome', 'A smooth, mirror-finish chrome vehicle body cover.'],
+    ['chrome-upload-08', 'Chrome Plated Cover', 'chrome', 'A polished chrome cover displayed on a chair.'],
+    ['chrome-upload-09', 'Chrome Plated Shell', 'chrome', 'A mirror-finish chrome automotive shell standing on a work surface.'],
+    ['chrome-upload-10', 'Chrome Part Collection', 'chrome', 'Several chrome plated automotive housings arranged on a shelf.'],
+    ['chrome-upload-11', 'Chrome Wheel Covers', 'chrome', 'Four polished wheel covers with five-lug openings.'],
+    ['chrome-upload-12', 'Chrome Front Grille', 'chrome', 'A wide polished chrome grille with multiple horizontal bars.'],
+    ['dipping-upload-01', 'Dipping Pattern Display', 'dipping', 'Three decorative dipping pattern panels displayed side by side.'],
+    ['dipping-upload-02', 'Carbon Pattern Trim Pieces', 'dipping', 'Two automotive trim pieces with a black carbon-fiber pattern finish.'],
+    ['dipping-upload-03', 'Abstract Pattern Sample', 'dipping', 'A black and silver abstract pattern sample with purple accents.'],
+    ['dipping-upload-04', 'Woodgrain Console Trim', 'dipping', 'A brown woodgrain center console trim frame.'],
+    ['dipping-upload-05', 'Camouflage Pattern Sample', 'dipping', 'A green and black camouflage pattern finish sample.'],
+    ['dipping-upload-06', 'Woodgrain Steering Wheel', 'dipping', 'A steering wheel with glossy woodgrain sections and dark grips.'],
+    ['dipping-upload-07', 'Carbon Pattern Console Trim', 'dipping', 'A carbon-fiber pattern console trim panel shown from the back.'],
+    ['dipping-upload-08', 'Carbon Pattern Interior Kit', 'dipping', 'A set of automotive interior trim pieces with a carbon-fiber pattern finish.'],
+    ['dipping-upload-09', 'Carbon Pattern Trim Set', 'dipping', 'Several carbon-fiber pattern automotive trim pieces laid out together.'],
+    ['dipping-upload-10', 'Camouflage Engine Cover', 'dipping', 'An automotive engine cover with a camouflage pattern finish.'],
+    ['dipping-upload-11', 'Carbon Pattern Curved Trim', 'dipping', 'A curved automotive trim piece with a glossy carbon-fiber pattern.'],
+    ['dipping-upload-12', 'Dark Patterned Trim', 'dipping', 'A dark abstract pattern finish with fine gold-colored accents.'],
+    ['dipping-upload-13', 'Custom Pattern Steering Wheel', 'dipping', 'A steering wheel with black, yellow, and patterned sections.'],
+    ['dipping-upload-14', 'Geometric Pattern Trim', 'dipping', 'A long dark trim piece with an abstract geometric finish.'],
+    ['dipping-upload-15', 'Woodgrain Trim Detail', 'dipping', 'A narrow glossy brown woodgrain automotive trim piece.'],
+    ['dipping-upload-16', 'Woodgrain Console Panel', 'dipping', 'A brown woodgrain console panel with several cutouts.'],
+    ['dipping-upload-17', 'Dark Pattern Interior Kit', 'dipping', 'A steering wheel and matching interior panels with a dark patterned finish.'],
+    ['dipping-upload-18', 'Camouflage Engine Part', 'dipping', 'A large automotive engine component with a camouflage pattern finish.'],
+    ['dipping-upload-19', 'Carbon Pattern Console Bezel', 'dipping', 'A carbon-fiber pattern center console bezel shown from the front.'],
+    ['dipping-upload-20', 'Carbon Pattern Dashboard Panel', 'dipping', 'A dashboard panel finished with a glossy carbon-fiber pattern.'],
+    ['dipping-upload-21', 'Dipping Finish Samples', 'dipping', 'A display of automotive dipping finish samples in several colors and patterns.'],
+    ['dipping-upload-22', 'Carbon Pattern Steering Wheel', 'dipping', 'A steering wheel with black grips and carbon-fiber pattern sections.'],
+].map(([id, title, category, alt]) => image(id, title, category, `${id}.webp`, alt, null, 'portrait'));
+
+const uploadedFinishVideos = [
+    video('gold-plating-upload-01', 'Gold Plated Showpiece', 'gold-plating-upload-01.webm', 'gold-plating-upload-01-poster.webp', 'A reflective gold-plated decorative hand displayed in the workshop.', 'gold-plating', 'wide'),
+    video('chrome-upload-video-01', 'Chrome Plated Trim', 'chrome-upload-video-01.webm', 'chrome-upload-video-01-poster.webp', 'A close view of reflective chrome trim in the workshop.', 'chrome', 'wide'),
+    video('gold-plating-upload-02', 'Gold Plated Parts Display', 'gold-plating-upload-02.webm', 'gold-plating-upload-02-poster.webp', 'Gold-plated automotive trim pieces arranged for display.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-03', 'Gold Plated Surface Detail', 'gold-plating-upload-03.webm', 'gold-plating-upload-03-poster.webp', 'A close-up view of a highly reflective gold-plated curved part.', 'gold-plating', 'vertical'),
+    video('gold-plating-upload-04', 'Gold Plated Hardware', 'gold-plating-upload-04.webm', 'gold-plating-upload-04-poster.webp', 'A collection of gold-plated hardware and decorative fittings.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-05', 'Gold Plated Fittings', 'gold-plating-upload-05.webm', 'gold-plating-upload-05-poster.webp', 'Gold and copper-colored plated fittings laid out together.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-06', 'Gold Plated Fixtures', 'gold-plating-upload-06.webm', 'gold-plating-upload-06-poster.webp', 'A group of gold-plated fixtures shown on a work surface.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-07', 'Gold Plated Components', 'gold-plating-upload-07.webm', 'gold-plating-upload-07-poster.webp', 'Gold-plated components and fittings shown in close-up.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-08', 'Gold Plated Part Detail', 'gold-plating-upload-08.webm', 'gold-plating-upload-08-poster.webp', 'A close view of a reflective plated automotive part.', 'gold-plating', 'wide'),
+    video('gold-plating-upload-09', 'Gold Plated Fitting Detail', 'gold-plating-upload-09.webm', 'gold-plating-upload-09-poster.webp', 'Gold-plated fittings and trim details displayed in the workshop.', 'gold-plating', 'wide'),
 ];
 
 export const galleryItems = [
@@ -45,25 +105,27 @@ export const galleryItems = [
     image('texture-brick-feature-wall', 'Brick Feature Wall', 'texture', 'texture-brick-feature-wall.webp', 'Red brick pattern feature wall in a living room'),
     image('texture-tv-wall-ct1', 'TV Feature Wall — CT.1', 'texture', 'texture-tv-wall-ct1.webp', 'Textured TV feature wall with a light gray finish'),
     image('texture-bedroom-ct8', 'Ribbed Texture — CT.8', 'texture', 'texture-bedroom-ct8.webp', 'Ribbed ivory texture behind a finished bed'),
-    image('gold-plated-living-room', 'Gold Plated Decor', 'finishing', 'gold-plated-living-room.webp', 'Gold plated coffee table in a finished living room'),
-    image('silver-chrome-living-room', 'Silver Chrome Decor', 'finishing', 'silver-chrome-living-room.webp', 'Silver chrome coffee table in a finished living room'),
+    image('gold-plated-living-room', 'Gold Plated Decor', 'finishing', 'gold-plated-living-room.webp', 'Gold plated coffee table in a finished living room', 'gold-plating'),
+    image('silver-chrome-living-room', 'Silver Chrome Decor', 'finishing', 'silver-chrome-living-room.webp', 'Silver chrome coffee table in a finished living room', 'chrome'),
     image('premium-dark-texture-wall', 'Premium Dark Texture', 'texture', 'premium-dark-texture-wall.webp', 'Dark decorative wall texture with gold accents'),
     image('texture-samples-ct1-9', 'Texture Range — CT.1–9', 'samples', 'texture-samples-ct1-9.webp', 'Claro texture samples labeled CT.1 through CT.9'),
     image('texture-samples-display', 'Showroom Texture Samples', 'samples', 'texture-samples-display.webp', 'A showroom display of decorative texture samples'),
     image('texture-bedroom-ct9-detail', 'Ivory Texture — CT.9 Detail', 'texture', 'texture-bedroom-ct9-detail.webp', 'Close view of an ivory texture bedroom project'),
-    image('chrome-wheel', 'Chrome Wheel Finish', 'automotive', 'chrome-wheel.webp', 'A polished chrome finish on a vehicle wheel'),
+    image('chrome-wheel', 'Chrome Wheel Finish', 'automotive', 'chrome-wheel.webp', 'A polished chrome finish on a vehicle wheel', 'chrome'),
     image('steering-wheel-finish', 'Steering Wheel Finish', 'automotive', 'steering-wheel-finish.webp', 'A custom black and yellow steering wheel finish'),
-    image('marble-dipping-finish', 'Marble Design Dipping', 'finishing', 'marble-dipping-finish.webp', 'A marble design dipping finish displayed on a table'),
-    image('custom-finished-parts', 'Custom Finished Parts', 'automotive', 'custom-finished-parts.webp', 'A set of custom finished vehicle interior parts'),
+    image('marble-dipping-finish', 'Marble Design Dipping', 'finishing', 'marble-dipping-finish.webp', 'A marble design dipping finish displayed on a table', 'dipping'),
+    image('custom-finished-parts', 'Custom Finished Parts', 'automotive', 'custom-finished-parts.webp', 'A set of custom finished vehicle interior parts', 'dipping'),
     image('texture-bedroom-ct4-project', 'Charcoal Texture — CT.4 Project', 'texture', 'texture-bedroom-ct4-project.webp', 'Charcoal CT.4 texture in a complete bedroom setting'),
-    image('gold-finish-grille', 'Gold Finish Grille', 'automotive', 'gold-finish-grille.webp', 'A vehicle grille with a reflective gold finish'),
+    image('gold-finish-grille', 'Gold Finish Grille', 'automotive', 'gold-finish-grille.webp', 'A vehicle grille with a reflective gold finish', 'gold-plating'),
     image('texture-bedroom-ct10', 'Navy Texture — CT.10 Project', 'texture', 'texture-bedroom-ct10.webp', 'Navy CT.10 texture in a complete bedroom setting'),
     image('texture-samples-mixed', 'Mixed Texture Samples', 'samples', 'texture-samples-mixed.webp', 'A display board with mixed decorative texture samples'),
-    image('gold-finish-emblem', 'Gold Finish Emblem', 'automotive', 'gold-finish-emblem.webp', 'A gold finished vehicle emblem held in hand'),
+    image('gold-finish-emblem', 'Gold Finish Emblem', 'automotive', 'gold-finish-emblem.webp', 'A gold finished vehicle emblem held in hand', 'gold-plating'),
     image('texture-bedroom-ct5', 'Rose Texture — CT.5 Project', 'texture', 'texture-bedroom-ct5.webp', 'Rose CT.5 texture in a complete bedroom setting'),
     video('video-texture-samples', 'Texture Sample Showcase', 'project-video-01.webm', 'project-video-01-poster.webp', 'Video showing Claro texture samples in the showroom'),
-    video('video-chrome-finish', 'Chrome Finish Showcase', 'project-video-02.webm', 'project-video-02-poster.webp', 'Video showing a reflective chrome finish on a decorative piece'),
-    video('video-gold-grille', 'Gold Grille Finish', 'project-video-03.webm', 'project-video-03-poster.webp', 'Video showing a gold finished vehicle grille'),
+    video('video-chrome-finish', 'Chrome Finish Showcase', 'project-video-02.webm', 'project-video-02-poster.webp', 'Video showing a reflective chrome finish on a decorative piece', 'chrome'),
+    video('video-gold-grille', 'Gold Grille Finish', 'project-video-03.webm', 'project-video-03-poster.webp', 'Video showing a gold finished vehicle grille', 'gold-plating'),
+    ...uploadedFinishPhotos,
+    ...uploadedFinishVideos,
 ];
 
 const galleryPreviewIds = [

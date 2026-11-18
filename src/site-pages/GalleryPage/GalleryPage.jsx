@@ -10,7 +10,9 @@ export default function GalleryPage() {
     const [activeCategory, setActiveCategory] = useState('all');
     const filteredItems = activeCategory === 'all'
         ? galleryItems
-        : galleryItems.filter((item) => item.category === activeCategory);
+        : activeCategory === 'videos'
+            ? galleryItems.filter((item) => item.type === 'video')
+            : galleryItems.filter((item) => item.category === activeCategory || item.finishCategory === activeCategory);
 
     return (
         <main className="gallery-page">
@@ -46,7 +48,7 @@ export default function GalleryPage() {
                     <div className="gallery-grid">
                         {filteredItems.map((item) => (
                             <article className="gallery-card" key={item.id}>
-                                <div className="gallery-card-media">
+                                <div className={`gallery-card-media${item.mediaShape ? ` gallery-card-media--${item.mediaShape}` : ''}`}>
                                     {item.type === 'video' ? (
                                         <video
                                             src={item.src}
