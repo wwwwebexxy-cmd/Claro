@@ -7,26 +7,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
-    const logo = await readFile(join(process.cwd(), 'public/assets/claro-logo.webp'));
-    const logoSource = `data:image/webp;base64,${logo.toString('base64')}`;
+  const image = await readFile(join(process.cwd(), 'public/claro-social.png'));
+  const imageSource = `data:image/png;base64,${image.toString('base64')}`;
 
-    return new ImageResponse(
-        <div
-            style={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: '#000000',
-            }}
-        >
-            <img
-                src={logoSource}
-                alt="CLARO logo"
-                style={{ width: 900, height: 370 }}
-            />
-        </div>,
-        size
-    );
+  return new ImageResponse(
+    <img src={imageSource} style={{ width: 1200, height: 630 }} alt={alt} />,
+    size
+  );
 }

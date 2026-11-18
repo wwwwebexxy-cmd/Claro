@@ -3,7 +3,7 @@
   "name": "CLARO Umm Al Quwain",
   "icons": [
     {
-      "src": "/icon",
+      "src": "/claro-favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
