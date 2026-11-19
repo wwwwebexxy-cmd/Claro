@@ -3,7 +3,7 @@ import { claroMetaDescription } from '../src/siteMetadata';
 import '../src/index.css';
 
 export const metadata = {
-  title: 'CLARO | Umm Al Quwain, UAE',
+  title: 'REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb',
   description: claroMetaDescription,
   icons: {
     icon: '/claro-favicon.png',
@@ -12,7 +12,7 @@ export const metadata = {
   },
   manifest: '/manifest.json',
   openGraph: {
-    title: 'CLARO | Umm Al Quwain, UAE',
+    title: 'REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb',
     description: claroMetaDescription,
     images: [
       {
@@ -25,6 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb',
     images: ['/claro-social.png'],
   },
 };

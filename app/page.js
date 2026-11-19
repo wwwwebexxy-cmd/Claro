@@ -1,7 +1,7 @@
 import HomePage from '../src/site-pages/HomePage/HomePage';
 import { claroMetaDescription, claroSocialImage } from '../src/siteMetadata';
 
-const title = 'CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain';
+const title = 'REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb';
 const description = claroMetaDescription;
 export const metadata = {
   title,

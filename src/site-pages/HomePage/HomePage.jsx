@@ -127,7 +127,7 @@ const HomePage = () => {
     };
 
     useSeo({
-        title: "CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain",
+        title: "REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb",
         description: claroMetaDescription,
         ogType: "website",
         ogImage: claroSocialImage,
