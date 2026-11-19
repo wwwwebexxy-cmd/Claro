@@ -20,7 +20,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$siteMetadata$2e$js__$
 ;
 ;
 ;
-const title = 'CLARO | Painting, Cleaning & Technical Services in Umm Al Quwain';
+const title = 'REAL CLARO | Coating &Testing, Dipping & Painting, Sliver Plate & Gold Plate, Headlight Restoration & Cleaning, Technical Services in Umm Al Quwain & Omassery & Kozhikode Malaparamb';
 const description = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$siteMetadata$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["claroMetaDescription"];
 const metadata = {
     title,

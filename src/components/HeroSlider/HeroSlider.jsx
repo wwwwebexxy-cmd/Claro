@@ -12,9 +12,9 @@ import './HeroSlider.css';
 const slides = [
   {
     image: '/assets/claro-generated-painting-hero.webp',
-    subtitle: 'CLARO · Umm Al Quwain, UAE',
-    title: 'Painting <span>Works</span>',
-    description: 'Painting, texture finishes and specialist surface treatments for homes and businesses.',
+    subtitle: 'CLARO · Umm Al Quwain, UAE & India',
+    title: 'Coating <span>Works</span>',
+    description: 'Coating, texture finishes and specialist surface treatments for homes and businesses.',
     btnText: 'Explore Services'
   },
   {
@@ -26,9 +26,9 @@ const slides = [
   },
   {
     video: '/assets/claro-workshop-finishing.webm',
-    subtitle: 'Painting Works · Umm Al Quwain',
+    subtitle: 'Coating Works · Umm Al Quwain',
     title: 'Dipping &amp; <span>Chrome Finishing</span>',
-    description: 'Explore Claro painting, cleaning and technical service divisions.',
+    description: 'Explore Claro Coating, cleaning and technical service divisions.',
     btnText: 'View Services'
   }
 ];
