@@ -67,7 +67,7 @@ const Footer = () => {
                         <div className="footer-col">
                             <h4>Contact</h4>
                             <ul className="footer-contact-list">
-                                <li><a className="footer-phone-link" href="tel:+971545484873"><FaPhoneAlt size={14} /> +971 54 548 4873</a></li>
+                                <li><a className="footer-phone-link" href="tel:+971506382067"><FaPhoneAlt size={14} /> +971 50 6382 067</a></li>
                                 <li><a href="mailto:ajmalclaro@gmail.com"><FaEnvelope size={14} /> ajmalclaro@gmail.com</a></li>
                                 <li><a className="footer-location-link" href="https://www.google.com/maps?q=25.5039005,55.5543137"><FaMapMarkerAlt className="footer-location-icon" size={14} /><span>A8 Warehouse, Al Maqta 2, Umm Al Quwain</span></a></li>
                                 {branchLocations.flatMap((location) => location.phones.map((phone) => (

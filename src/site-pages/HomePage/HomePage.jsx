@@ -16,6 +16,10 @@ import { claroMetaDescription, claroSocialImage } from '../../siteMetadata';
 import './HomePage.css';
 
 const locationUrl = 'https://www.google.com/maps?q=25.5039005,55.5543137';
+const uaeContactPhones = [
+    { href: 'tel:+971506382067', label: '050 6382 067' },
+    { href: 'tel:+971509614067', label: '050 9614 067' },
+];
 
 const useReveal = () => {
     const ref = useRef(null);
@@ -282,7 +286,7 @@ const HomePage = () => {
                                 },
                                 {
                                     icon: <FaPhoneAlt />, title: 'Call Us',
-                                    links: [{ href: 'tel:+971545484873', label: '+971 54 548 4873' }],
+                                    links: uaeContactPhones,
                                 },
                                 {
                                     icon: <FaStar />, title: 'Service Divisions',
